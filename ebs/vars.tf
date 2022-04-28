@@ -1,10 +1,15 @@
-variable "AWS_ACCESS_KEY" {
+variable "REGION" {
+  type = string
 }
-variable "AWS_SECRET_KEY" {
+
+variable "CREDENTIALS" {
+  default = "~/.aws/credentials"
 }
-variable "AWS_REGION" {
-  default = "us-east-1"
+
+variable "PROFILE" {
+  type = string
 }
+
 variable "AMIS" {
   type = map(any)
   default = {

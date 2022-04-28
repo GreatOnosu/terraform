@@ -1,4 +1,6 @@
-#Internet VPC
+###################################################
+## Internet VPC
+###################################################
 resource "aws_vpc" "main" {
   cidr_block           = "10.0.0.0/16"
   instance_tenancy     = "default"
@@ -10,7 +12,9 @@ resource "aws_vpc" "main" {
   }
 }
 
-#subnets
+###################################################
+## Public Subnets
+###################################################
 resource "aws_subnet" "main-public-1" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.1.0/24"
@@ -34,13 +38,16 @@ resource "aws_subnet" "main-public-2" {
 resource "aws_subnet" "main-public-3" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.3.0/24"
-  map_public_ip_on_launch = "false"
+  map_public_ip_on_launch = "true"
   availability_zone       = "us-east-1c"
   tags = {
     "Name" = "main-public-3"
   }
 }
 
+###################################################
+## Private Subnets
+###################################################
 resource "aws_subnet" "main-private-1" {
   vpc_id                  = aws_vpc.main.id
   cidr_block              = "10.0.4.0/24"
