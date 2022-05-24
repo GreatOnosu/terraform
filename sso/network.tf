@@ -78,4 +78,4 @@ resource "aws_route_table_association" "route_public_subnet_2" {
 }
 
 
-$adminConfig=(.\New-AdfsDkmContainer.ps1 -ServiceAccount sixninex\adfssvc -AdfsAdministratorAccount sixninex\Admin)
+# $adminConfig=(.\New-AdfsDkmContainer.ps1 -ServiceAccount sixninex\adfssvc -AdfsAdministratorAccount sixninex\Admin)
